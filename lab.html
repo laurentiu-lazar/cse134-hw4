@@ -21,6 +21,140 @@
 
     <main>
         <h2>Page for showcasing various html tags</h2>
+        <ol>
+            <li>
+                &lt;audio&gt; tag:
+                <ul><li>
+                    <audio controls>
+                        <source src="assets/coconutmall.mp3" type="audio/mp3">
+                        Mario Kart Coconut Mall
+                    </audio>
+                </li></ul>
+            </li>
+
+            <li>
+                &lt;video&gt; tag:
+                <ul><li>
+                    <video controls>
+                        <source src="assets/video.mp4" type="audio/mp3">
+                        Mario Kart Coconut Mall
+                    </audio>
+                </li></ul>
+            </li>
+            
+            <li>
+                &lt;iframe&gt; tag:
+                <ul>
+                    <li>
+                    <iframe src="index.html"></iframe>
+                    </li>
+                    <li>Inception! :0</li>
+                </ul>
+            </li>
+            
+            <li>
+                &lt;svg&gt; tag:
+                <ul><li>
+                    <svg height="100" width="100">
+                        <circle cx="50" cy="50" r="40" stroke="red" stroke-width="10" fill="yellow" />
+                        <circle cx="50" cy="50" r="20"  stroke-width="6" fill="blue" />
+                        Sorry, your browser does not support inline SVG.  
+                    </svg>
+                    Romanian air force     
+                </li></ul>
+            </li>
+
+            <li>
+                &lt;style&gt;, &lt;script&gt;, &lt;code&gt; and &lt;canvas&gt; tags:
+                <ul>
+                    <li> <canvas id="canvas"></canvas> </li>
+                    <li>
+                        <label for="input">Change canvas color:</label>
+                        <input id="input" type="color" onchange="func()">
+                    </li>
+                    <li>
+                        7 lines of JavaScript:
+                        <pre>
+                            <code>
+function func(e) {
+    const canvas = document.getElementById('canvas');
+    const input  = document.getElementById('input');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = input.value;
+    ctx.fillRect(0, 0, canvas.width, canvas.height); 
+}                            
+                            </code>
+                        </pre>
+                    </li>
+                    
+                    <style>
+                        #canvas{
+                            border: 1px solid black;
+                        }
+                    </style>
+                    <script>
+                        // 7 lines
+                        function func() {
+                            const canvas = document.getElementById('canvas');
+                            const input  = document.getElementById('input');
+                            const ctx = canvas.getContext('2d');
+                            ctx.fillStyle = input.value;
+                            ctx.fillRect(0, 0, canvas.width, canvas.height); 
+                        }
+                    </script>
+                </ul>
+            </li>
+
+            <li>
+                &lt;template&gt; tag:
+                <template id="template">
+                    <li>
+                        <h3>Hi there</h3>
+                        <p>I'm a template clone</p>
+                    </li>
+                </template>
+                <ul id="target_list">
+                    <li><button onclick="func2()">Press me</button></li>
+                    <li>6 lines of JavaScript (total 13 (please don't sue me)):
+                        <pre>
+                            <code>
+function func2(){
+    let template = document.getElementById('template');
+    let target = document.getElementById('target_list');
+    let clone = template.content.cloneNode(true);
+    target.appendChild(clone);
+}
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+                <script>
+                    // 6 lines
+                    function func2(){
+                        let template = document.getElementById('template');
+                        let target = document.getElementById('target_list');
+                        let clone = template.content.cloneNode(true);
+                        target.appendChild(clone);
+                    }
+                </script>
+            </li>
+
+            <li>
+                MathML &lt;math&gt; tag:
+                <ul><li>
+                    A famous mathematician once said:
+                    <math>
+                        <mi>E</mi>
+                        <mo>=</mo>
+                        <mi>m</mi>
+                        <msup>
+                            <mi>c</mi>
+                            <mn>2</mn>
+                        </msup>
+                    </math>
+                </li></ul>
+            </li>
+        </ol>
     </main>
 
     <footer>

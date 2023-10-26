@@ -10,6 +10,12 @@
     <!-- By Emoji One, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=89207982 -->
 
     <title>Experiments</title>
+
+    <style>
+        #canvas{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +58,7 @@
                     <video controls>
                         <source src="assets/video.mp4" type="audio/mp3">
                         Mario Kart Coconut Mall
-                    </audio>
+                    </video>
                 </li></ul>
             </li>
             
@@ -72,7 +78,7 @@
                     <svg height="100" width="100">
                         <circle cx="50" cy="50" r="40" stroke="red" stroke-width="10" fill="yellow" />
                         <circle cx="50" cy="50" r="20"  stroke-width="6" fill="blue" />
-                        Sorry, your browser does not support inline SVG.  
+                        <title id="svgtitle">Romanian air force logo</title>
                     </svg>
                     Romanian air force     
                 </li></ul>
@@ -100,12 +106,10 @@ function func(e) {
                             </code>
                         </pre>
                     </li>
+                    <li>
+                        The style tag is inside the head of the page, providing a border to the canvas.
+                    </li>
                     
-                    <style>
-                        #canvas{
-                            border: 1px solid black;
-                        }
-                    </style>
                     <script>
                         // 7 lines
                         function func() {

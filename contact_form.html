@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Author">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- By Emoji One, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=89207982 -->
+
+    <title>Contact form</title>
+</head>
+
+<body>
+    <header>
+        <h1>Contact form</h1>
+        <nav>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Complete the following to send me a message</h2>
+        <p>I will try to respond back as quick as possible.</p>
+
+        <!-- placeholder, obviously does not work as of yet -->
+        <form action="/form_handler" method="POST">
+            <fieldset>
+                <legend>Sender information</legend>
+
+                <label for="reason">Select reason for contact:</label>
+                <input type="radio" id="inquiry" name="reason" />
+                <label for="inquiry">Inquiry</label>
+                <input type="radio" id="comment" name="reason" />
+                <label for="comment">Comment</label>
+                <input type="radio" id="recruitment" name="reason" />
+                <label for="recruitment">Recruitment</label>        
+                <br>
+
+                <label for="continent">Continent:</label>
+                <select name="Continent" id="continent">
+                    <optgroup label = "West">
+                        <option value="na">North America</option>
+                        <option value="sa">Sout America</option>
+                    </optgroup>
+                    <optgroup label = "Central">
+                        <option value="eu">Europe</option>
+                        <option value="af">Africa</option>
+                    </optgroup>
+                    <optgroup label = "East">
+                        <option value="as">Asia</option>
+                        <option value="au">Australia</option>
+                    </optgroup>
+                </select>
+                <br>
+
+                <label for="countries">Country:</label>
+                <input list="countries" id="country" name="country">
+                <datalist id="countries">
+                    <option value="us">United states</option>
+                    <option value="mx">Mexico</option>
+                    <option value="cd">Canada</option>
+                </datalist>
+                <br>
+
+                <label for="mail">Email address:</label>
+                <input type="text" id="mail">
+            </fieldset>
+            <fieldset>
+                <legend>Message</legend>
+                <label for="message">Type your message here:</label>
+                <textarea name="Message" id="message" cols="30" rows="10"></textarea>
+            </fieldset>
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <hr>
+        <p>Made with &hearts; by Laurentiu Lazar</p>
+    </footer>
+</body>
+
+</html>

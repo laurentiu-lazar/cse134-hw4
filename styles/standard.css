@@ -1,0 +1,50 @@
+@import "vars-standard.css";
+li[data-active]{
+    font-weight: bold;
+}
+
+body, html{
+    background-color: var(--background-color, white);
+    font-family: var(--main-font);
+    font-display: fallback;
+    
+
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: var(--secondary-color, green);
+}
+
+header{
+    padding-top: 0;
+    /* border: 1px solid black; */
+    background-color: var(--secondary-color);
+    & h1 {
+        margin: 0;
+        padding: 2rem;
+    }
+}
+
+nav{
+    color: var(--secondary-color, green);
+    background-color: var(--primary-color);
+    padding: 0 1em;
+    
+    & >ul>li, ul, h2{
+        display: inline-block;
+    }
+    & ul ul{
+        display: none;
+    }
+    & li:hover>ul{
+        display: block;
+        position: fixed;
+        background-color: var(--primary-color, white);
+    }
+}
+
+main{
+    padding: 0 2em;
+}

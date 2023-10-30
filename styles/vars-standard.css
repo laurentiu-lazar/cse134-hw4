@@ -1,0 +1,15 @@
+/* https://coolors.co/palette/d9ed92-b5e48c-99d98c-76c893-52b69a-34a0a4-168aad-1a759f-1e6091-184e77
+   color palette  */
+/* https://fonts.google.com/specimen/Work+Sans?preview.size=28
+   font */
+@font-face {
+    font-family: work-sans;
+    src: url(fonts/WorkSans-VariableFont_wght.ttf);
+}
+:root{
+    --primary-color: #184E77;
+    --secondary-color: #52B69A;
+    --background-color: #D9ED92;
+
+    --main-font: work-sans;
+}

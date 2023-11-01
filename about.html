@@ -8,6 +8,7 @@
     
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- By Emoji One, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=89207982 -->
+    <link rel="stylesheet" href="styles/standard.css" media="screen" type="text/css">
 
     <title>About me</title>
 </head>
@@ -19,7 +20,7 @@
             <h2>Navigation</h2>
             <ul>
                 <li><a href="index.html">Homepage</a></li>
-                <li><b><a href="#">About me</a></b></li>
+                <li data-active><a href="#">About me</a></li>
                 <li><a href="cv.html">Curriculum Vitae</a></li>
                 <li><a href="lab.html">Lab page</a></li>
                 <li>
@@ -59,24 +60,26 @@
                     much thought into the theory of it, I just enjoy doing it. Here are some examples
                     of my photos:
                 </p>
-                <details>
+                <details open>
                     <summary>Some of my photos</summary>
-                    <picture>
-                        <source type="image/avif" srcset="assets/photos/photo1.avif" width="250">
-                        <img src="assets/photos/photo1.jpg" alt="my picture" width="250">    
-                    </picture>
-                    <picture>
-                        <source type="image/avif" srcset="assets/photos/photo2.avif" width="250">
-                        <img src="assets/photos/photo2.jpg" alt="my picture" width="250">    
-                    </picture>
-                    <picture>
-                        <source type="image/avif" srcset="assets/photos/photo3.avif" width="250">
-                        <img src="assets/photos/photo3.jpg" alt="my picture" width="250">    
-                    </picture>
-                    <picture>
-                        <source type="image/avif" srcset="assets/photos/photo4.avif" width="250">
-                        <img src="assets/photos/photo4.jpg" alt="my picture" width="250">    
-                    </picture>
+                    <section>
+                        <picture>
+                            <source type="image/avif" srcset="assets/photos/photo1.avif">
+                            <img src="assets/photos/photo1.jpg" alt="my picture">    
+                        </picture>
+                        <picture>
+                            <source type="image/avif" srcset="assets/photos/photo2.avif">
+                            <img src="assets/photos/photo2.jpg" alt="my picture">    
+                        </picture>
+                        <picture>
+                            <source type="image/avif" srcset="assets/photos/photo3.avif">
+                            <img src="assets/photos/photo3.jpg" alt="my picture">    
+                        </picture>
+                        <picture>
+                            <source type="image/avif" srcset="assets/photos/photo4.avif">
+                            <img src="assets/photos/photo4.jpg" alt="my picture">    
+                        </picture>
+                </section>
                 </details>
                 <aside>
                     All pictures featured here were done near Torrey Pines Rd.
@@ -92,48 +95,89 @@
                     I have been lucky in this matter, as my father works with cars and I got a chance to drive some pretty cool ones like:
                 </p>
                 <div id="examples">
+                    <section id="table">
                     <table>
                         <caption>Cool cars I drove</caption>
                         <colgroup>
-                            <col span="2" style="background-color:lightblue;">
+                            <col style="background-color: var(--secondary-color, red);">
+                            <col span="2" >
                             <col>
                             <!-- Im using background color only to showcase the use of col. As I understood it, there is no better way to show that I've used this tag. -->
                         </colgroup>
                         <tr>
+                            <th>item</th>
                             <th>Brand</th>
                             <th>Model</th>
                             <th>Year</th>
                         </tr>
                         <tr>
+                            <td>1.</td>
                             <td>Audi</td>
                             <td>RS5</td>
                             <td>2013</td>
                         </tr>
                         <tr>
+                            <td>2.</td>
                             <td>Audi</td>
                             <td>RS5</td>
                             <td>2019</td>
                         </tr>
                         <tr>
+                            <td>3.</td>
                             <td>Audi</td>
                             <td>RS4</td>
                             <td>2008</td>
                         </tr>
                         <tr>
+                            <td>4.</td>
                             <td>BMW</td>
                             <td>M340i</td>
                             <td>2021</td>
                         </tr>
                     </table>
-                    <figure>
-                        <picture>
-                            <source type="image/avif" srcset="assets/photos/photo5.avif" width="250">
-                            <img src="assets/photos/photo5.jpg" alt="my picture" width="250">    
-                        </picture>
-                        <figcaption>
-                            1. 2013 Audi RS5
-                        </figcaption>
-                    </figure>
+                    </section>
+
+                    <section id="pictures">
+                        <figure>
+                            <picture>
+                                <source type="image/avif" srcset="assets/photos/hobby2/2013rs5.avif">
+                                <img src="assets/photos/hobby2/2013rs5.jpg" alt="my picture">    
+                            </picture>
+                            <figcaption>
+                                1. 2013 Audi RS5
+                            </figcaption>
+                        </figure>
+
+                        <figure>
+                            <picture>
+                                <source type="image/avif" srcset="assets/photos/hobby2/2019rs5.avif">
+                                <img src="assets/photos/hobby2/2019rs5.jpg" alt="my picture">    
+                            </picture>
+                            <figcaption>
+                                2. 2019 Audi RS5
+                            </figcaption>
+                        </figure>
+
+                        <figure>
+                            <picture>
+                                <source type="image/avif" srcset="assets/photos/hobby2/2008rs4.avif">
+                                <img src="assets/photos/hobby2/2008rs4.jpg" alt="my picture">    
+                            </picture>
+                            <figcaption>
+                                3. 2008 Audi RS4
+                            </figcaption>
+                        </figure>
+
+                        <figure>
+                            <picture>
+                                <source type="image/avif" srcset="assets/photos/hobby2/2021m340.avif">
+                                <img src="assets/photos/hobby2/2021m340.jpg" alt="my picture">    
+                            </picture>
+                            <figcaption>
+                                4. 2021 BMW M340i
+                            </figcaption>
+                        </figure>
+                    </section>
                 </div>
             </article>
        </section>

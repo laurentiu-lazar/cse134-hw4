@@ -37,11 +37,12 @@ nav{
         display: inline-block;
     }
     & ul ul{
-        display: none;
+        display: block;
+        visibility: hidden;
+        position: fixed;
     }
     & li:hover>ul{
-        display: block;
-        position: fixed;
+        visibility: visible;
         background-color: var(--primary-color, white);
     }
 }
@@ -57,4 +58,60 @@ footer{
 
     margin-top: auto; 
     /* stick to bottom when page does not have enough content */
+}
+
+details>section{ /* grid display does not work otherwise*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media only screen and (max-width: 600px){ display: flex; flex-direction: column; } 
+    & picture {
+        display: inline-block;
+        padding: 1em;
+        text-align: center;
+    }
+    & source, img {
+        max-width: 100%;
+        border-radius: 10%;
+    }
+}
+
+aside {
+    font-size: small;
+    text-align: right;
+}
+p{ text-indent: 2em; }
+div#examples{
+    display: flex;
+    flex-direction: row;
+    @media only screen and (max-width: 600px){ flex-direction: column; } 
+    
+
+    & section#pictures{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        flex: 2;
+
+        & figure{
+            margin: 1em;
+            text-align: center;
+        }
+        & source, img{
+            width: 100%;
+            max-width: 50vh;
+            min-width: 25dvw;
+            border-radius: 10%;
+        }
+    }
+    & section#table{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & table {
+            width: 100%;
+            max-width: 500px;
+            table-layout: auto;
+        }
+    }
 }

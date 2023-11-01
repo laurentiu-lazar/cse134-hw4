@@ -1,21 +1,22 @@
 @import "vars-standard.css";
-li[data-active]{
-    font-weight: bold;
-}
-
 body, html{
     background-color: var(--background-color, white);
     font-family: var(--main-font);
-    font-display: fallback;
-    
+    min-height: 100dvh;
 
     margin: 0;
     padding: 0;
 }
-
-a{
-    color: var(--secondary-color, green);
+* {
+    box-sizing: border-box;
 }
+body{ /* for footer to stick at the bottom, please don't kill me */
+    display: flex;
+    flex-direction: column;
+}
+
+a { color: var(--secondary-color, green); }
+li[data-active] { font-weight: bold; }
 
 header{
     padding-top: 0;
@@ -47,4 +48,13 @@ nav{
 
 main{
     padding: 0 2em;
+}
+
+footer{
+    background-color: var(--primary-color, white);
+    color: var(--secondary-color, black);
+    padding: 1em;
+
+    margin-top: auto; 
+    /* stick to bottom when page does not have enough content */
 }

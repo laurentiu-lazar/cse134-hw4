@@ -4,6 +4,7 @@
    font */
 @font-face {
     font-family: work-sans;
+    font-display: fallback;
     src: url(fonts/WorkSans-VariableFont_wght.ttf);
 }
 :root{

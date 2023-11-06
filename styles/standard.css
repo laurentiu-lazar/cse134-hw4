@@ -18,9 +18,9 @@ body{ /* for footer to stick at the bottom, please don't kill me */
 a { color: var(--secondary-color, green); }
 li[data-active] { font-weight: bold; }
 
+/* header */
 header{
     padding-top: 0;
-    /* border: 1px solid black; */
     background-color: var(--secondary-color);
     & h1 {
         margin: 0;
@@ -32,10 +32,22 @@ nav{
     color: var(--secondary-color, green);
     background-color: var(--primary-color);
     padding: 0 1em;
+    margin: 0;
+    padding: 1em;
     
-    & >ul>li, ul, h2{
-        display: inline-block;
+    & h2{ display: inline; }
+    & ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;      
     }
+    & li a{
+        display: block;
+        padding: 20px 20px;
+        border-right: 1px solid var(--secondary-color);      
+    }
+    
     & ul ul{
         display: block;
         visibility: hidden;
@@ -45,7 +57,25 @@ nav{
         visibility: visible;
         background-color: var(--primary-color, white);
     }
+
+    @media (min-width:48em){
+        li {
+            float: left;
+        }
+        li a {
+            padding: .5em 1em;
+        }
+        ul {
+            clear: none;
+            float: right;
+            max-height: none;
+        }
+        .menu-icon {
+            display: none;
+        }
+    }
 }
+/*-----------------------------------------------------------*/
 
 main{
     padding: 0 2em;
@@ -55,8 +85,9 @@ footer{
     background-color: var(--primary-color, white);
     color: var(--secondary-color, black);
     padding: 1em;
+    text-align: center;
 
-    margin-top: auto; 
+    margin-top: auto;
     /* stick to bottom when page does not have enough content */
 }
 

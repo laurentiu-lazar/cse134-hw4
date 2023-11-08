@@ -222,6 +222,11 @@ div#animated-element{
     75%  {background-color:yellow; left:0px; top:200px;border-radius: 50%;}
     100% {background-color:blue; left:0px; top:0px;border-radius: 0;}
 }
+@keyframes example-phone {
+    0%   {background-color:blue; top:0px; border-radius: 0;}
+    50%  {background-color:red; top:200px;border-radius: 50%;}
+    100% {background-color:blue; top:0px;border-radius: 0;}
+}
 
 @media screen and (max-width: 600px){
     details>section {
@@ -230,5 +235,9 @@ div#animated-element{
     }
     div#examples, div#info {
         flex-direction: column;
+    }
+    div#animated-element{
+        animation-name: example-phone;
+        animation-duration: 3s;
     }
 }

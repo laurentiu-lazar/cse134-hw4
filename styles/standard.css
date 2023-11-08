@@ -19,6 +19,7 @@ a { color: var(--secondary-color, green); }
 li[data-active] { font-weight: bold; }
 
 /* header */
+/* inspiration from https://codepen.io/mutedblues/pen/MmPNPG?editors=1100*/
 header{
     padding-top: 0;
     background-color: var(--secondary-color);
@@ -35,30 +36,53 @@ nav{
     margin: 0;
     padding: 1em;
     
-    & h2{ display: inline; }
-    & ul{
+    & h2{
+        display: inline;
+        float: left;
+        margin: 0;
+        text-decoration: none;      
+    }
+    & input{ display: none; }
+    & ul#menu{
         margin: 0;
         padding: 0;
         list-style: none;
-        overflow: hidden;      
+        overflow: hidden;
+        clear: both;
+
+        max-height: 0; /* start closed */
+        transition: max-height .5s ease-in-out; /* animate when opening */
+        /* I see the problems of using max-height for animating it, but I can't think of a better option */
+        
+        & ul{
+            text-indent: 1em;
+        }
+    }
+    #menu-btn:checked ~ ul#menu {
+        max-height: 50vh;
     }
     & li a{
         display: block;
-        padding: 20px 20px;
+        padding: 10px 10px;
         border-right: 1px solid var(--secondary-color);      
     }
-    
-    & ul ul{
-        display: block;
-        visibility: hidden;
-        position: fixed;
+    & #menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        position: relative;
+        user-select: none;
     }
-    & li:hover>ul{
-        visibility: visible;
-        background-color: var(--primary-color, white);
+    & label{
+        /* justify-content: center; */
+        /* align-items: center; */
+        margin-top: 5px;
     }
 
-    @media (min-width:48em){
+    @media (min-width:50em){
+        h2{
+            float: none;
+        }
         li {
             float: left;
         }
@@ -68,10 +92,20 @@ nav{
         ul {
             clear: none;
             float: right;
-            max-height: none;
+            max-height: none !important; /* still takes 0 because of id specificity, but I need these for both ul, parent and nested*/
+            display: inline-block;
         }
-        .menu-icon {
+        #menu-icon {
             display: none;
+        }
+        & ul ul{
+            display: block;
+            visibility: hidden;
+            position: fixed;
+        }
+        & li:hover>ul{
+            visibility: visible;
+            background-color: var(--primary-color, white);
         }
     }
 }

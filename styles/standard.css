@@ -16,7 +16,12 @@ body{ /* for footer to stick at the bottom, please don't kill me */
 }
 
 a { color: var(--secondary-color, green); }
-li[data-active] { font-weight: bold; & li {font-weight: normal;} }
+li[data-active] {
+    font-weight: bold;
+    & li {
+        font-weight: normal;
+    }
+}
 
 /* header */
 /* inspiration from https://codepen.io/mutedblues/pen/MmPNPG?editors=1100*/
@@ -133,10 +138,10 @@ footer{
     /* stick to bottom when page does not have enough content */
 }
 
-details>section{ /* grid display does not work otherwise*/
+article#hobby1 details>div#photos{ /* grid display does not work otherwise*/
     display: grid;
     grid-template-columns: 1fr 1fr;
-    @media only screen and (max-width: 600px){ display: flex; flex-direction: column; } 
+
     & picture {
         display: inline-block;
         padding: 1em;
@@ -153,19 +158,17 @@ aside {
     text-align: right;
 }
 p { text-indent: 2em; }
-ol.lab li{ margin-top: 1em; }
+ol.lab li { margin-top: 1em; }
 iframe { resize: both ;}
-div#examples{
+div#examples {
     display: flex;
     flex-direction: row;
-    @media only screen and (max-width: 600px){ flex-direction: column; } 
     
-
-    & section#pictures{
+    & div#pictures{
         display: grid;
         grid-template-columns: 1fr 1fr;
         flex: 3;
-
+        
         & figure{
             flex-shrink: 1;
             margin: 1em;
@@ -176,12 +179,12 @@ div#examples{
             border-radius: 10%;
         }
     }
-    & section#table{
+    & div#table{
         flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-
+        
         & table {
             width: 100%;
             max-width: 500px;
@@ -189,14 +192,15 @@ div#examples{
         }
     }
 }
+div#info {
+    display: flex;
+    flex-direction: row;
+}
+
 li:has(> div#animated-element){
     height: 300px;
 }
 
-div#info{
-    display: flex;
-    @media only screen and (max-width: 600px){ flex-direction: column; } 
-}
 section > div.section-body{ margin-left: 2em; }
 
 div#animated-element{
@@ -217,4 +221,14 @@ div#animated-element{
     50%  {background-color:red; left:200px; top:200px;border-radius: 0;}
     75%  {background-color:yellow; left:0px; top:200px;border-radius: 50%;}
     100% {background-color:blue; left:0px; top:0px;border-radius: 0;}
+}
+
+@media screen and (max-width: 600px){
+    details>section {
+        display: flex;
+        flex-direction: column;
+    }
+    div#examples, div#info {
+        flex-direction: column;
+    }
 }

@@ -8,6 +8,7 @@
     
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- By Emoji One, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=89207982 -->
+    <link rel="stylesheet" href="styles/standard.css" media="screen" type="text/css">
 
     <title>Experiments</title>
 
@@ -23,11 +24,13 @@
         <h1>Lab page</h1>
         <nav>
             <h2>Navigation</h2>
-            <ul>
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn" id="menu-icon"> V </label>
+            <ul id="menu">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="about.html">About me</a></li>
                 <li><a href="cv.html">Curriculum Vitae</a></li>
-                <li><b><a href="#">Lab page</a></b></li>
+                <li data-active><a href="#">Lab page</a></li>
                 <li>
                     <a href="contact.html">Contact</a>
                     <ul>
@@ -40,62 +43,66 @@
     </header>
 
     <main>
-        <h2>Page for showcasing various html tags</h2>
-        <ol>
-            <li>
-                &lt;audio&gt; tag:
-                <ul><li>
-                    <audio controls>
-                        <source src="assets/coconutmall.mp3" type="audio/mp3">
-                        Mario Kart Coconut Mall
-                    </audio>
-                </li></ul>
-            </li>
+        <h2>Page for showcasing various html/css tags</h2>
+        <ul style="list-style: none;">
+        <li>
+        <details>
+            <summary>HW2: HTML tags</summary>
+            <ol class="lab">
+                <li>
+                    &lt;audio&gt; tag:
+                    <ul><li>
+                        <audio controls>
+                            <source src="assets/coconutmall.mp3" type="audio/mp3">
+                            Mario Kart Coconut Mall
+                        </audio>
+                    </li></ul>
+                </li>
 
-            <li>
-                &lt;video&gt; tag:
-                <ul><li>
-                    <video controls>
-                        <source src="assets/video.mp4" type="audio/mp3">
-                        Mario Kart Coconut Mall
-                    </video>
-                </li></ul>
-            </li>
-            
-            <li>
-                &lt;iframe&gt; tag:
-                <ul>
-                    <li>
-                    <iframe src="index.html"></iframe>
-                    </li>
-                    <li>Inception! :0</li>
-                </ul>
-            </li>
-            
-            <li>
-                &lt;svg&gt; tag:
-                <ul><li>
-                    <svg height="100" width="100">
-                        <circle cx="50" cy="50" r="40" stroke="red" stroke-width="10" fill="yellow" />
-                        <circle cx="50" cy="50" r="20"  stroke-width="6" fill="blue" />
-                        <title id="svgtitle">Romanian air force logo</title>
-                    </svg>
-                    Romanian air force     
-                </li></ul>
-            </li>
+                <li>
+                    &lt;video&gt; tag:
+                    <ul><li>
+                        <video controls>
+                            <source src="assets/video.mp4" type="audio/mp3">
+                            Mario Kart Coconut Mall
+                        </video>
+                    </li></ul>
+                </li>
+                
+                <li>
+                    &lt;iframe&gt; tag:
+                    <ul>
+                        <li>
+                        <iframe src="index.html"></iframe>
+                        </li>
+                        <li>Inception! :0</li>
+                    </ul>
+                </li>
+                
+                <li>
+                    &lt;svg&gt; tag:
+                    <ul><li>
+                        <svg height="100" width="100">
+                            <circle cx="50" cy="50" r="40" stroke="red" stroke-width="10" fill="yellow" />
+                            <circle cx="50" cy="50" r="20"  stroke-width="6" fill="blue" />
+                            <title id="svgtitle">Romanian air force logo</title>
+                        </svg>
+                        Romanian air force     
+                    </li></ul>
+                </li>
 
-            <li>
-                &lt;style&gt;, &lt;script&gt;, &lt;code&gt; and &lt;canvas&gt; tags:
-                <ul>
-                    <li> <canvas id="canvas"></canvas> </li>
-                    <li>
-                        <label for="input">Change canvas color:</label>
-                        <input id="input" type="color" onchange="func()">
-                    </li>
-                    <li>
-                        7 lines of JavaScript:
-                        <pre>
-                            <code>
+                <li>
+                    &lt;style&gt;, &lt;script&gt;, &lt;code&gt; and &lt;canvas&gt; tags:
+                    <ul>
+                        <li> <canvas id="canvas"></canvas> </li>
+                        <li>
+                            <label for="input">Change canvas color:</label>
+                            <input id="input" type="color" onchange="func()">
+                        </li>
+                        <li>
+                            7 lines of JavaScript:
+                            <pre>
+                                <code>
 function func(e) {
     const canvas = document.getElementById('canvas');
     const input  = document.getElementById('input');
@@ -103,76 +110,172 @@ function func(e) {
     ctx.fillStyle = input.value;
     ctx.fillRect(0, 0, canvas.width, canvas.height); 
 }                            
-                            </code>
-                        </pre>
-                    </li>
-                    <li>
-                        The style tag is inside the head of the page, providing a border to the canvas.
-                    </li>
-                    
-                    <script>
-                        // 7 lines
-                        function func() {
-                            const canvas = document.getElementById('canvas');
-                            const input  = document.getElementById('input');
-                            const ctx = canvas.getContext('2d');
-                            ctx.fillStyle = input.value;
-                            ctx.fillRect(0, 0, canvas.width, canvas.height); 
-                        }
-                    </script>
-                </ul>
-            </li>
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            The style tag is inside the head of the page, providing a border to the canvas.
+                        </li>
+                        
+                        <script>
+                            // 7 lines
+                            function func() {
+                                const canvas = document.getElementById('canvas');
+                                const input  = document.getElementById('input');
+                                const ctx = canvas.getContext('2d');
+                                ctx.fillStyle = input.value;
+                                ctx.fillRect(0, 0, canvas.width, canvas.height); 
+                            }
+                        </script>
+                    </ul>
+                </li>
 
-            <li>
-                &lt;template&gt; tag:
-                <template id="template">
-                    <li>
-                        <h3>Hi there</h3>
-                        <p>I'm a template clone</p>
-                    </li>
-                </template>
-                <ul id="target_list">
-                    <li><button onclick="func2()">Press me</button></li>
-                    <li>6 lines of JavaScript (total 13 (please don't sue me)):
-                        <pre>
-                            <code>
+                <li>
+                    &lt;template&gt; tag:
+                    <template id="template">
+                        <li>
+                            <h3>Hi there</h3>
+                            <p>I'm a template clone</p>
+                        </li>
+                    </template>
+                    <ul id="target_list">
+                        <li><button onclick="func2()">Press me</button></li>
+                        <li>6 lines of JavaScript (total 13 (please don't sue me)):
+                            <pre>
+                                <code>
 function func2(){
     let template = document.getElementById('template');
     let target = document.getElementById('target_list');
     let clone = template.content.cloneNode(true);
     target.appendChild(clone);
 }
-                            </code>
-                        </pre>
-                    </li>
-                </ul>
-                <script>
-                    // 6 lines
-                    function func2(){
-                        let template = document.getElementById('template');
-                        let target = document.getElementById('target_list');
-                        let clone = template.content.cloneNode(true);
-                        target.appendChild(clone);
-                    }
-                </script>
-            </li>
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                    <script>
+                        // 6 lines
+                        function func2(){
+                            let template = document.getElementById('template');
+                            let target = document.getElementById('target_list');
+                            let clone = template.content.cloneNode(true);
+                            target.appendChild(clone);
+                        }
+                    </script>
+                </li>
 
-            <li>
-                MathML &lt;math&gt; tag:
-                <ul><li>
-                    A famous mathematician once said:
-                    <math>
-                        <mi>E</mi>
-                        <mo>=</mo>
-                        <mi>m</mi>
-                        <msup>
-                            <mi>c</mi>
-                            <mn>2</mn>
-                        </msup>
-                    </math>
-                </li></ul>
-            </li>
-        </ol>
+                <li>
+                    MathML &lt;math&gt; tag:
+                    <ul><li>
+                        A famous mathematician once said:
+                        <math>
+                            <mi>E</mi>
+                            <mo>=</mo>
+                            <mi>m</mi>
+                            <msup>
+                                <mi>c</mi>
+                                <mn>2</mn>
+                            </msup>
+                        </math>
+                    </li></ul>
+                </li>
+            </ol>
+        </details>
+        </li>
+        <li>
+            <details open>
+                <summary>HW3: CSS tags</summary>
+                <ol class="lab">
+                    <li>CSS Animation
+                        <ul>
+                            <li><div id="animated-element"></div></li>
+                        </ul>
+                    </li>
+                    <li>has() selector
+                        <ul>
+                            <li>Observe the usage of the has() selector in the previous element:
+                                <code><pre>
+    li:has(> div#animated-element){
+        height: 300px;
+    }</pre></code>
+                                and how it does not affect all other list items.
+                            </li>
+                            <li>Note that the usage of the pseudo-class is not enabled by default in Firefox, but I thought I'd leave the style like this to make a point.</li>
+                        </ul>
+                    </li>
+                    <li>Wider gamut color
+                        <style scoped>
+                            div{
+                                border: 1px solid black;
+                                display: inline-flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 150px;
+                                height: 150px;
+                                text-align: center;
+                                text-indent: 0;
+                                & p{
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                            div#color-1{
+                                background-color: color(a98-rgb 1 0 0);
+                            }
+                            div#color-2{
+                                background-color: color(srgb-linear 0 1 0);
+                            }
+                            div#color-3{
+                                background-color: color(rec2020 0 0 1);
+                            }
+
+                            div#color-red{
+                                background-color: red;
+                            }
+                            div#color-blue{
+                                background-color: blue;
+                            }
+                            div#color-mix{
+                                background-color: color-mix(in srgb, red, blue);
+                            }
+                        </style>
+                        <ul>
+                            <li>color() <br>
+                                <div id="color-1">
+                                    a98-rgb red
+                                </div>
+                                <div id="color-2">
+                                    linear srgb green
+                                </div>
+                                <div id="color-3">
+                                    rec2020 blue
+                                </div>
+                            </li>
+                            <li>color-mix() <br>
+                                <div id="color-red">
+                                    red
+                                </div> +
+                                <div id="color-blue">
+                                    blue
+                                </div> = 
+                                <div id="color-mix">
+                                    purple?
+                                </div></li>
+                        </ul>
+                    </li>
+                    <li>Bonus: scoped CSS
+                        <ul><li>Note the scoped css in the item above used in order to demostrate the respective features:
+                            <code><pre>&lt;style scoped&gt;
+    div{
+        border: 1px solid black;
+        display: inline-flex;
+        justify-content: center;
+        ...</pre></code>
+                        </li></ul>
+                    </li>
+                </ol>
+            </details>
+        </li>
     </main>
 
     <footer>

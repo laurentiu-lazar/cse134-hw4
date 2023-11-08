@@ -51,7 +51,7 @@ nav{
         clear: both;
 
         max-height: 0; /* start closed */
-        transition: max-height .5s ease-in-out; /* animate when opening */
+        transition: max-height .5s cubic-bezier(0, 1, 0, 1); /* animate when opening */
         /* I see the problems of using max-height for animating it, but I can't think of a better option */
         
         & ul{
@@ -59,10 +59,12 @@ nav{
         }
     }
     #menu-btn:checked ~ ul#menu {
-        max-height: 50vh;
+        max-height: 100dvh;
+        transition: max-height .5s ease-in-out;
     }
     #menu-btn:checked ~ #menu-icon {
         transform: rotate(180deg);
+        transition-duration: .3s;
     }
       
     & li a{
@@ -82,21 +84,21 @@ nav{
     }
 
     @media (min-width:50em){
-        h2{
+        & h2{
             float: none;
         }
-        li {
+        & li {
             float: left;
         }
-        li a {
+        & li a {
             padding: .5em 1em;
         }
-        ul {
+        & ul {
             clear: none;
             float: right;
             max-height: none !important; /* still takes 0 because of id specificity, but I need these for both ul, parent and nested*/
         }
-        #menu-icon {
+        & #menu-icon {
             display: none;
         }
         & ul ul{
@@ -145,7 +147,9 @@ aside {
     font-size: small;
     text-align: right;
 }
-p{ text-indent: 2em; }
+p { text-indent: 2em; }
+ol.lab li{ margin-top: 1em; }
+iframe { resize: both ;}
 div#examples{
     display: flex;
     flex-direction: row;
@@ -180,4 +184,26 @@ div#examples{
             table-layout: auto;
         }
     }
+}
+li:has(> div#animated-element){
+    height: 300px;
+}
+div#animated-element{
+    /* highly inspired from https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_count2 */
+    border: 5px solid black;
+    border-radius: 0;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+@keyframes example {
+    0%   {background-color:blue; left:0px; top:0px; border-radius: 0;}
+    25%  {background-color:yellow; left:200px; top:0px; border-radius: 50%;}
+    50%  {background-color:red; left:200px; top:200px;border-radius: 0;}
+    75%  {background-color:yellow; left:0px; top:200px;border-radius: 50%;}
+    100% {background-color:blue; left:0px; top:0px;border-radius: 0;}
 }

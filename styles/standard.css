@@ -78,9 +78,7 @@ nav{
         user-select: none;
     }
     & label{
-        /* justify-content: center; */
-        /* align-items: center; */
-        margin-top: 5px;
+        padding: 5px; /* so it's easier to click */
     }
 
     @media (min-width:50em){

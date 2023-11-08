@@ -193,6 +193,13 @@ div#examples{
 li:has(> div#animated-element){
     height: 300px;
 }
+
+div#info{
+    display: flex;
+    @media only screen and (max-width: 600px){ flex-direction: column; } 
+}
+section > div.section-body{ margin-left: 2em; }
+
 div#animated-element{
     /* highly inspired from https://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_count2 */
     border: 5px solid black;

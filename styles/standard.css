@@ -61,14 +61,18 @@ nav{
     #menu-btn:checked ~ ul#menu {
         max-height: 50vh;
     }
+    #menu-btn:checked ~ #menu-icon {
+        transform: rotate(180deg);
+    }
+      
     & li a{
         display: block;
         padding: 10px 10px;
         border-right: 1px solid var(--secondary-color);      
     }
     & #menu-icon {
+        transition: all .5s ease-out;
         cursor: pointer;
-        display: inline-block;
         float: right;
         position: relative;
         user-select: none;
@@ -93,7 +97,6 @@ nav{
             clear: none;
             float: right;
             max-height: none !important; /* still takes 0 because of id specificity, but I need these for both ul, parent and nested*/
-            display: inline-block;
         }
         #menu-icon {
             display: none;

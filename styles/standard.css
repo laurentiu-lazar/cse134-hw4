@@ -164,16 +164,15 @@ div#examples{
     & section#pictures{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        flex: 2;
+        flex: 3;
 
         & figure{
+            flex-shrink: 1;
             margin: 1em;
             text-align: center;
         }
         & source, img{
-            width: 100%;
-            max-width: 50vh;
-            min-width: 25dvw;
+            max-width: 100%;
             border-radius: 10%;
         }
     }

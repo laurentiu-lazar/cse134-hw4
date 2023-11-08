@@ -105,6 +105,9 @@ nav{
             display: block;
             visibility: hidden;
             position: fixed;
+            width: 13em;
+            right: 0px;
+            & li a{ border: 0; text-align: center;}
         }
         & li:hover>ul{
             visibility: visible;
@@ -116,6 +119,8 @@ nav{
 
 main{
     padding: 0 2em;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 footer{

@@ -8,6 +8,7 @@
     
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- By Emoji One, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=89207982 -->
+    <link rel="stylesheet" href="styles/standard.css" media="screen" type="text/css">
 
     <title>Contact</title>
 </head>
@@ -17,13 +18,15 @@
         <h1>Contact me</h1>
         <nav>
             <h2>Navigation</h2>
-            <ul>
+            <input type="checkbox" id="menu-btn">
+            <label for="menu-btn" id="menu-icon"> V </label>
+            <ul id="menu">
                 <li><a href="index.html">Homepage</a></li>
                 <li><a href="about.html">About me</a></li>
                 <li><a href="cv.html">Curriculum Vitae</a></li>
                 <li><a href="lab.html">Lab page</a></li>
-                <li>
-                    <b><a href="#">Contact</a></b>
+                <li data-active>
+                    <a href="#">Contact</a>
                     <ul>
                         <li><a href="contact_form.html">Contact form</a></li>
                         <li><a href="contact_social.html">Social media</a></li>

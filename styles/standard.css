@@ -16,7 +16,7 @@ body{ /* for footer to stick at the bottom, please don't kill me */
 }
 
 a { color: var(--secondary-color, green); }
-li[data-active] { font-weight: bold; }
+li[data-active] { font-weight: bold; & li {font-weight: normal;} }
 
 /* header */
 /* inspiration from https://codepen.io/mutedblues/pen/MmPNPG?editors=1100*/

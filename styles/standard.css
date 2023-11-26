@@ -153,6 +153,48 @@ article#hobby1 details>div#photos{ /* grid display does not work otherwise*/
     }
 }
 
+/*---------------------------------------forms----------------------------------------------*/
+textarea{
+    resize: none;
+    width: 100%;
+    margin: 1em 0;
+}
+form #control-area{
+    /* text-align: right; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5em 0 0 0;
+}
+form button{
+    font-size: large;
+    width: 6em;
+}
+form-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+form output.error-message{
+    color: red;
+}
+form output.info-message{
+    color: blue;
+}
+/* label span.required::after{
+    content: '*';
+    color: red;
+} */
+form {margin-bottom: 1em;}
+form-field:has(input:required, textarea:required) label::after{
+    content: ' *';
+    color: red;
+}
+/* input[type='email']{
+    
+} */
+/*------------------------------------------------------------------------------------------*/
+
 aside {
     font-size: small;
     text-align: right;

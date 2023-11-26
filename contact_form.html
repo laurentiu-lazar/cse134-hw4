@@ -40,55 +40,65 @@
         <h2>Complete the following to send me a message</h2>
         <p>I will try to respond back as quick as possible.</p>
 
-        <!-- placeholder, obviously does not work as of yet -->
-        <form>
+        <form action="https://httpbin.org/post" method="POST">
+            <script>
+                let debug=false;
+                if(debug)
+                    window.addEventListener("load", function(){
+                        let errors = document.querySelectorAll('output.error-message');
+                        let infos = document.querySelectorAll('output.info-message');
+                        console.log(errors);
+                        for (const error of errors){
+                            error.innerHTML='sample error message';
+                        }
+                        for (const info of infos){
+                            info.innerHTML='sample info message';
+                        }
+                    }, false);
+            </script>
+        <fieldset>
+            <legend>Contact me</legend>
             <fieldset>
                 <legend>Sender information</legend>
 
-                <label>Select reason for contact:</label>
-                <input type="radio" id="inquiry" name="reason">
-                <label for="inquiry">Inquiry</label>
-                <input type="radio" id="comment" name="reason">
-                <label for="comment">Comment</label>
-                <input type="radio" id="recruitment" name="reason">
-                <label for="recruitment">Recruitment</label>        
-                <br>
+                <form-field>
+                    <label for reason>Select reason for contact:</label>
+                    <select name="reason" id="reason">
+                        <option value="inquiry">Inquiry</option>
+                        <option value="comment">Comment</option>
+                        <option value="recruitment">Recruitment</option>
+                    </select>
+                </form-field>
 
-                <label for="continent">Continent:</label>
-                <select name="Continent" id="continent">
-                    <optgroup label = "West">
-                        <option value="na">North America</option>
-                        <option value="sa">Sout America</option>
-                    </optgroup>
-                    <optgroup label = "Central">
-                        <option value="eu">Europe</option>
-                        <option value="af">Africa</option>
-                    </optgroup>
-                    <optgroup label = "East">
-                        <option value="as">Asia</option>
-                        <option value="au">Australia</option>
-                    </optgroup>
-                </select>
-                <br>
+                <form-field>
+                    <label for="name">Full name:</label>
+                    <input type="text" id="name" name="fullname" required>
+                    <output for="name" class="error-message"></output>
+                    <output for="name" class="info-message"></output>
+                </form-field>
 
-                <label for="countries">Country:</label>
-                <input type="text" id="countries" name="country">
-                <datalist>
-                    <option value="us">United states</option>
-                    <option value="mx">Mexico</option>
-                    <option value="cd">Canada</option>
-                </datalist>
-                <br>
-
-                <label for="mail">Email address:</label>
-                <input type="text" id="mail">
+                <form-field>
+                    <label for="mail">Email address:</label>
+                    <input type="email" id="mail" name="mail" required>
+                    <output for="mail" class="error-message"></output>
+                    <output for="mail" class="info-message"></output>
+                </form-field>
+                <input type="hidden" name="possible_bot" id="bot" value="true">
             </fieldset>
             <fieldset>
                 <legend>Message</legend>
-                <label for="message">Type your message here:</label>
-                <textarea name="Message" id="message" cols="30" rows="10"></textarea>
+                <form-field>
+                    <label for="message">Type your message here:</label>
+                    <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                    <output for="message" class="error-message"></output>
+                    <output for="message" class="info-message"></output>
+                </form-field>
             </fieldset>
-            <button type="submit">Submit</button>
+            <div id="control-area">
+                <button type="submit">Submit</button>
+                <button>Reset</button>
+            </div>
+        </fieldset>
         </form>
     </main>
 

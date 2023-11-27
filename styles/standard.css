@@ -123,8 +123,12 @@ nav{
 /*-----------------------------------------------------------*/
 
 main{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width:100%;
     padding: 0 2em;
-    max-width: 1000px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
@@ -202,13 +206,13 @@ input#name:user-invalid ~ output.error-message::after{
     content:'Please input your full name'; 
 }
 input#name:user-invalid ~ output.info-message::after{
-    content:'Input a name of at least 2 characters and at most 50'; 
+    content:'Input a valid name of at least 2 and at most 50 latin characters'; 
 }
 
-textarea:invalid ~ output.error-message::after{
-    content:'Please type your comment.'; 
+#message:invalid ~ output.error-message::after{
+    content:'Please type a valid comment. Use only alphanumeric characters and punctuation marks.'; 
 }
-textarea:invalid ~ output.info-message::after{
+#message:invalid ~ output.info-message::after{
     content:'Max comment size is 500 characters.'; 
 }
 /*------------------------------------------------------------------------------------------*/

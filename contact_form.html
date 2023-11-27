@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="styles/standard.css" media="screen" type="text/css">
 
     <title>Contact form</title>
+
+    <script src="scripts/form-validation.js" onload></script>
 </head>
 
 <body>
@@ -72,7 +74,7 @@
 
                 <form-field>
                     <label for="name">Full name:</label>
-                    <input type="text" id="name" name="fullname" required maxlength="50" minlength="2">
+                    <input type="text" id="name" name="fullname" required maxlength="50" minlength="2" pattern="[\w\s]{2,50}">
                     <output for="name" class="error-message"></output>
                     <output for="name" class="info-message"></output>
                 </form-field>

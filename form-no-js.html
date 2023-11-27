@@ -72,7 +72,7 @@
 
                 <form-field>
                     <label for="name">Full name:</label>
-                    <input type="text" id="name" name="fullname" required maxlength="50" minlength="2">
+                    <input type="text" id="name" name="fullname" required maxlength="50" minlength="2" pattern="[\w\s]{2,50}">
                     <output for="name" class="error-message"></output>
                     <output for="name" class="info-message"></output>
                 </form-field>
@@ -89,7 +89,7 @@
                 <legend>Message</legend>
                 <form-field>
                     <label for="message">Type your message here:</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required maxlength="500"></textarea>
+                    <input type="text" name="message" id="message" required maxlength="500" pattern="[\w!?.\/\-]{1,500}">
                     <output for="message" class="error-message"></output>
                     <output for="message" class="info-message"></output>
                 </form-field>

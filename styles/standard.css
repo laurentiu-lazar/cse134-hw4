@@ -170,7 +170,7 @@ form #control-area{
     justify-content: space-around;
     padding: 0.5em 0 0 0;
 }
-form button{
+form button, form input[type='reset']{
     font-size: large;
     width: 6em;
 }
@@ -213,7 +213,18 @@ input#name:user-invalid ~ output.info-message::after{
     content:'Please type a valid comment. Use only alphanumeric characters and punctuation marks.'; 
 }
 #message:invalid ~ output.info-message::after{
-    content:'Max comment size is 500 characters.'; 
+    content:'Comment size is between 5-500 characters.'; 
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 1s, opacity 1s linear;
+}
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s linear;
 }
 /*------------------------------------------------------------------------------------------*/
 

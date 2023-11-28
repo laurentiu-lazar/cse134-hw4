@@ -64,7 +64,7 @@
                 <legend>Sender information</legend>
 
                 <form-field>
-                    <label for reason>Select reason for contact:</label>
+                    <label for="reason">Select reason for contact:</label>
                     <select name="reason" id="reason">
                         <option value="inquiry">Inquiry</option>
                         <option value="comment">Comment</option>
@@ -74,7 +74,7 @@
 
                 <form-field>
                     <label for="name">Full name:</label>
-                    <input type="text" id="name" name="fullname" required maxlength="50" minlength="2" pattern="[\w\s]{2,50}">
+                    <input type="text" id="name" name="fullname" required maxlength="50" minlength="2" pattern="[a-zA-Z\s]{2,50}">
                     <output for="name" class="error-message"></output>
                     <output for="name" class="info-message"></output>
                 </form-field>
@@ -91,14 +91,14 @@
                 <legend>Message</legend>
                 <form-field>
                     <label for="message">Type your message here:</label>
-                    <textarea name="message" id="message" cols="30" rows="10" required maxlength="500"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" required maxlength="500" minlength="5"></textarea>
                     <output for="message" class="error-message"></output>
                     <output for="message" class="info-message"></output>
                 </form-field>
             </fieldset>
             <div id="control-area">
-                <button type="submit">Submit</button>
-                <button>Reset</button>
+                <button type="submit" id="submit-button">Submit</button>
+                <input type="reset">
             </div>
         </fieldset>
         </form>

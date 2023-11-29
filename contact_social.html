@@ -11,11 +11,21 @@
     <link rel="stylesheet" href="styles/standard.css" media="screen" type="text/css">
 
     <title>Social media</title>
+
+    <script src="scripts/toggle-switch.js"></script>
+    <link rel="stylesheet" href="styles/toggle-switch.css" media="screen" type="text/css">
 </head>
 
 <body>
     <header>
-        <h1>Social media</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <h1>Social media</h1>
+            <label id="toggle-switch">
+                <input type = 'checkbox'>
+                <span></span>
+            </label>
+        </div>
+
         <nav>
             <h2>Navigation</h2>
             <input type="checkbox" id="menu-btn">
@@ -39,7 +49,7 @@
         <h2>Follow me on:</h2>
         <ul>
             <li>
-                <a href = "https://www.instagram.com/laurentiu3859/" style="text-decoration: none; color:black;">
+                <a href = "https://www.instagram.com/laurentiu3859/" style="text-decoration: none; color:var(--contrast-color, black);">
                 <pre>
 ⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀
 ⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠉⢹⣿⣆
@@ -55,7 +65,7 @@
             <p><a href="https://www.instagram.com/laurentiu3859/">Instagram</a></p>
             </li>
             <li>
-                <a href="https://www.facebook.com/laurentiu.lazar.5055" style="text-decoration: none; color:black;">
+                <a href="https://www.facebook.com/laurentiu.lazar.5055" style="text-decoration: none; color:var(--contrast-color, black);">
                 <pre>
 ⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠟⠛⠻⢿⣿⣿⣿

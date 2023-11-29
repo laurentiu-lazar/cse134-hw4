@@ -17,7 +17,7 @@ body{ /* for footer to stick at the bottom, please don't kill me */
     flex-direction: column;
 }
 
-a { color: var(--secondary-color, green); }
+a { color: var(--link-color, green); }
 li[data-active] {
     font-weight: bold;
     & li {

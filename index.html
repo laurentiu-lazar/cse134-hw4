@@ -17,11 +17,22 @@
     <link rel="stylesheet" href="styles/standard.css" media="screen" type="text/css">
 
     <title>Homepage</title>
+
+    <script src="scripts/toggle-switch.js"></script>
+    <link rel="stylesheet" href="styles/toggle-switch.css" media="screen" type="text/css">
+
 </head>
 
 <body>
     <header>
-        <h1>Welcome to my site!</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <h1>Welcome to my site!</h1>
+            <label id="toggle-switch">
+                <input type = 'checkbox'>
+                <span></span>
+            </label>
+        </div>
+
         <nav>
             <h2>Navigation</h2>
             <input type="checkbox" id="menu-btn">

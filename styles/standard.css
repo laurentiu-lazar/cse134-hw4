@@ -111,7 +111,7 @@ nav{
         & ul ul{
             display: block;
             visibility: hidden;
-            position: fixed;
+            position: absolute;
             width: 13em;
             right: 0px;
             & li a{ border: 0; text-align: center;}

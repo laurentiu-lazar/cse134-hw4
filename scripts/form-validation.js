@@ -1,13 +1,22 @@
+const form_errors = [];
+
 window.addEventListener('DOMContentLoaded', function(){
     let submit = this.document.getElementById("submit-button");
     let form = document.forms[0];
     let inputs = document.querySelectorAll("form input, form textarea");
     let message = document.querySelector("#message");
+    let errorInput = document.getElementById('errors');
 
     form.noValidate=true;
 
     for(let field of inputs)
         field.addEventListener("input", function(e){e.target.setCustomValidity('');})
+
+    function updateErrors(fieldName, validity){
+        for(let key in validity)
+            if(validity[key])
+                form_errors.push({field: fieldName, error:key});
+    }
 
     function checkAndSubmit(e){
         for(let field of inputs) field.setCustomValidity('');
@@ -19,9 +28,11 @@ window.addEventListener('DOMContentLoaded', function(){
                 e.stopImmediatePropagation();
                 message.setCustomValidity("Please only use allowed characters");
                 message.reportValidity();
+                updateErrors('message', message.validity);
                 return;
             }
-            
+
+            errorInput.value = JSON.stringify(form_errors);
         } else {
 
             e.preventDefault();
@@ -31,6 +42,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
             for(let field of inputs){
                 if(field.checkValidity()) continue;
+                updateErrors(field.name, field.validity);
 
                 if(field.validity.tooShort)
                     field.setCustomValidity(`Min length is ${field.minLength}. You're using ${field.value.length} characters.`)
@@ -78,4 +90,21 @@ window.addEventListener('DOMContentLoaded', function(){
     let name = document.querySelector("#name");
     let nameOutput = document.querySelector("#name ~ output.error-message");
     name.addEventListener("input", (e) => (filterAndReport(name, nameOutput, /[^a-zA-Z\s]/g)));
+
+    let characterCount = document.createElement('span');
+    characterCount.innerText=`0/${message.maxLength}`;
+    document.getElementById('message-labels').appendChild(characterCount);
+
+    function updateCounter(){
+        characterCount.innerText=`${message.value.length}/${message.maxLength}`;
+
+        if(message.value.length >= message.maxLength)
+            characterCount.className='count-error';
+        else if(message.value.length >= message.maxLength*3/4)
+            characterCount.className='count-warning';
+        else
+            characterCount.className='count-info';
+    }
+
+    message.addEventListener('input', updateCounter);
 });

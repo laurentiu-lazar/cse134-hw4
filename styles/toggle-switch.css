@@ -1,0 +1,13 @@
+#toggle-switch input{
+    display: none;
+}
+#toggle-switch span{
+    font-size: 3em;
+}
+#toggle-switch{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1em;
+    cursor: pointer;
+}

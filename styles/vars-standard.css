@@ -11,6 +11,16 @@
     --primary-color: #184E77;
     --secondary-color: #52B69A;
     --background-color: #D9ED92;
+    --primary-text-color: black;
+
+    --main-font: work-sans;
+}
+
+[data-theme='dark']{
+    --primary-color: black;
+    --secondary-color: gray;
+    --background-color: dimGray;
+    --primary-text-color: yellow;
 
     --main-font: work-sans;
 }

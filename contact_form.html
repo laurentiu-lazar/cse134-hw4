@@ -12,12 +12,21 @@
 
     <title>Contact form</title>
 
-    <script src="scripts/form-validation.js" onload></script>
+    <script src="scripts/form-validation.js"></script>
+
+    <script src="scripts/toggle-switch.js"></script>
+    <link rel="stylesheet" href="styles/toggle-switch.css" media="screen" type="text/css">
 </head>
 
 <body>
     <header>
-        <h1>Contact form</h1>
+        <div style="display: flex; justify-content: space-between;">
+            <h1>Contact form</h1>
+            <label id="toggle-switch">
+                <input type = 'checkbox'>
+                <span></span>
+            </label>
+        </div>
         <nav>
             <h2>Navigation</h2>
             <input type="checkbox" id="menu-btn">
@@ -86,11 +95,14 @@
                     <output for="mail" class="info-message"></output>
                 </form-field>
                 <input type="hidden" name="possible_bot" id="bot" value="true">
+                <input type="hidden" name="errors" id="errors">
             </fieldset>
             <fieldset>
                 <legend>Message</legend>
                 <form-field>
-                    <label for="message">Type your message here:</label>
+                    <div style="display: flex; justify-content: space-between;" id="message-labels">
+                        <label for="message">Type your message here:</label>
+                    </div>
                     <textarea name="message" id="message" cols="30" rows="10" required maxlength="500" minlength="5"></textarea>
                     <output for="message" class="error-message"></output>
                     <output for="message" class="info-message"></output>

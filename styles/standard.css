@@ -6,6 +6,8 @@ body, html{
 
     margin: 0;
     padding: 0;
+    color: var(--primary-text-color, black);
+    transition: all 0.5s ease;
 }
 * {
     box-sizing: border-box;
@@ -225,6 +227,19 @@ input#name:user-invalid ~ output.info-message::after{
     visibility: visible;
     opacity: 1;
     transition: opacity 1s linear;
+}
+
+.count-error{
+    color: red;
+}
+.count-warning{
+    color: orange;
+}
+.count-info{
+    color:black;
+}
+input {
+    color: black;
 }
 /*------------------------------------------------------------------------------------------*/
 
